@@ -10,7 +10,7 @@ const navToggle = document.querySelector(".nav_toggle"),
     window.onscroll=()=>
     {
         navMenu.classList.remove("show-menu");
-         navToggle.classList.toggle("active");
+         navToggle.classList.remove("active");
     }
     
     
