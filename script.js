@@ -1,39 +1,22 @@
-
-/*===== SHOW MENU =====*/
-
-// const navToggle = document.querySelector(".nav_toggle")
-const navToggle = document.documentElement,
+const navToggle = document.querySelector(".nav_toggle"),
       navMenu = document.querySelector(".nav_menu");
 
-function openMenu(){
-  navMenu.classList.add('animate');
-  navToggle.addEventListener('click',closeMenuOnBodyClick);
-}
+
     navToggle.addEventListener("click", () => {
         navMenu.classList.toggle("show-menu");
         navToggle.classList.toggle("active");
     })
-    function closeMenu(){
-      navMenu.classList.remove('animate');
-      navToggle.removeEventListener('click',closeMenuOnBodyClick);
-    }
-    function closeMenuOnBodyClick(){
-      closeMenu();
-    }
-    function closeMenuOnBodyClick(event){
-      const path=event.composedPath();
-      if(path.some(elem=>elem.id==='myMenuId')){
-        return;
-      }
-      closeMenu();
-    }
-// window.onscroll=()=>
-// {
-//   navbar.classList.remove("show-menu");
-//   navMenu.classList.toggle("move");
-// }
 
-/*===== TYPING TEXT =====*/
+    window.onscroll=()=>
+    {
+        navMenu.classList.remove("show-menu");
+         navToggle.classList.toggle("active");
+    }
+    
+    
+
+
+
 
     var typed = new Typed(".profession_text", {
         strings: ["Programmer","Web Developer"],
@@ -42,33 +25,6 @@ function openMenu(){
         loop: true,
     })
 
-
-/*===== COUNTER =====*/
-
-    //  const counters = document.querySelectorAll(".counter");
-
-    //  counters.forEach((counter) => {
-    //    counter.innerText = "0";
-    
-    //    const updateCounter = () => {
-    //      const target = +counter.getAttribute("data-counter");
-    //      const c = +counter.innerText;
-    
-    //      const increment = target / 200;
-    
-    //      if (c < target) {
-    //        counter.innerText = `${Math.ceil(c + increment)}`;
-    //        setTimeout(updateCounter, 40);
-    //      } else {
-    //      counter.innerText = target;
-    //      }
-    //  };
-    
-    //    updateCounter();
-    // });
-    
-
-    /*===== SWIPER =====*/
 
     var swiper = new Swiper(".brand_container", {
         slidesPerView: 2,
